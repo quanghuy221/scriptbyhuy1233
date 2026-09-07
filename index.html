@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>QH Dev - Script Hub</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === BỘ 12 THEMES CHUẨN === */
+        :root {
+            --bg-base: #0b0914;
+            --card-bg: rgba(20, 16, 36, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #a855f7;
+            --primary-glow: rgba(168, 85, 247, 0.35);
+            --accent: #ec4899;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
+            --code-text: #f472b6;
+            --particle: #a855f7;
+        }
+
+        /* 1. Kyoto Night */
+        [data-theme="kyoto"] {
+            --bg-base: #0b0914;
+            --card-bg: rgba(20, 16, 36, 0.75);
+            --primary: #a855f7;
+            --primary-glow: rgba(168, 85, 247, 0.35);
+            --accent: #ec4899;
+            --code-text: #f472b6;
+            --particle: #a855f7;
+        }
+        /* 2. Cyber Neon */
+        [data-theme="cyber"] {
+            --bg-base: #030a16;
+            --card-bg: rgba(10, 22, 40, 0.75);
+            --primary: #06b6d4;
+            --primary-glow: rgba(6, 182, 212, 0.35);
+            --accent: #3b82f6;
+            --code-text: #22d3ee;
+            --particle: #06b6d4;
+        }
+        /* 3. Amoled Pulse */
+        [data-theme="amoled"] {
+            --bg-base: #000000;
+            --card-bg: rgba(18, 18, 18, 0.85);
+            --primary: #10b981;
+            --primary-glow: rgba(16, 185, 129, 0.35);
+            --accent: #06b6d4;
+            --code-text: #34d399;
+            --particle: #10b981;
+        }
+        /* 4. Sunset Chill */
+        [data-theme="sunset"] {
+            --bg-base: #140a0d;
+            --card-bg: rgba(30, 15, 20, 0.75);
+            --primary: #f97316;
+            --primary-glow: rgba(249, 115, 22, 0.35);
+            --accent: #ef4444;
+            --code-text: #fb923c;
+            --particle: #f97316;
+        }
+        /* 5. Deep Ocean */
+        [data-theme="ocean"] {
+            --bg-base: #070f1e;
+            --card-bg: rgba(13, 27, 50, 0.75);
+            --primary: #0284c7;
+            --primary-glow: rgba(2, 132, 199, 0.35);
+            --accent: #38bdf8;
+            --code-text: #38bdf8;
+            --particle: #38bdf8;
+        }
+        /* 6. Dracula Violet */
+        [data-theme="dracula"] {
+            --bg-base: #110e1b;
+            --card-bg: rgba(27, 22, 43, 0.75);
+            --primary: #8b5cf6;
+            --primary-glow: rgba(139, 92, 246, 0.35);
+            --accent: #c084fc;
+            --code-text: #c084fc;
+            --particle: #8b5cf6;
+        }
+        /* 7. Luxury Gold */
+        [data-theme="gold"] {
+            --bg-base: #0d0b06;
+            --card-bg: rgba(28, 23, 12, 0.75);
+            --primary: #f59e0b;
+            --primary-glow: rgba(245, 158, 11, 0.35);
+            --accent: #fbbf24;
+            --code-text: #fbbf24;
+            --particle: #f59e0b;
+        }
+        /* 8. Nordic Light */
+        [data-theme="nordic"] {
+            --bg-base: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.75);
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.35);
+            --accent: #818cf8;
+            --code-text: #7dd3fc;
+            --particle: #38bdf8;
+        }
+        /* 9. Sakura Blossom */
+        [data-theme="sakura"] {
+            --bg-base: #14080e;
+            --card-bg: rgba(33, 14, 24, 0.75);
+            --primary: #f43f5e;
+            --primary-glow: rgba(244, 63, 94, 0.35);
+            --accent: #fb7185;
+            --code-text: #fda4af;
+            --particle: #f43f5e;
+        }
+        /* 10. Emerald Matrix */
+        [data-theme="matrix"] {
+            --bg-base: #02120a;
+            --card-bg: rgba(6, 31, 18, 0.75);
+            --primary: #00ff87;
+            --primary-glow: rgba(0, 255, 135, 0.35);
+            --accent: #6ee7b7;
+            --code-text: #00ff87;
+            --particle: #00ff87;
+        }
+        /* 11. Cyberpunk Red */
+        [data-theme="cyber-red"] {
+            --bg-base: #120307;
+            --card-bg: rgba(33, 8, 15, 0.75);
+            --primary: #ff0055;
+            --primary-glow: rgba(255, 0, 85, 0.35);
+            --accent: #ff5000;
+            --code-text: #ff0055;
+            --particle: #ff0055;
+        }
+        /* 12. Synthwave 80s */
+        [data-theme="synthwave"] {
+            --bg-base: #0f051d;
+            --card-bg: rgba(29, 12, 54, 0.75);
+            --primary: #d946ef;
+            --primary-glow: rgba(217, 70, 239, 0.35);
+            --accent: #8b5cf6;
+            --code-text: #f0abfc;
+            --particle: #d946ef;
+        }
+
+        /* === STYLES CHÍNH === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.3s ease;
+            transform: translate3d(0, 0, 0); /* GPU Acceleration */
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .app-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 16px 60px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: #fff;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #ffffff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .clock-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .clock-box span.dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+        }
+
+        .btn-action {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--card-border);
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-sub);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            will-change: transform;
+        }
+
+        .btn-action:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        /* Script Grid */
+        .script-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 22px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px var(--primary-glow);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .card-tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary);
+            border: 1px solid var(--card-border);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .code-preview {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--code-text);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .btn-copy {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px var(--primary-glow);
+            will-change: transform;
+        }
+
+        .btn-copy:hover {
+            opacity: 0.92;
+            transform: scale(1.01);
+        }
+
+        .btn-copy.copied {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4) !important;
+        }
+
+        /* Modal Theme Grid */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: rgba(18, 14, 28, 0.94);
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 30px var(--primary-glow);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            padding: 24px;
+            transform: scale(0.92);
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .modal-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .btn-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-height: 360px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .theme-grid::-webkit-scrollbar {
+            width: 4px;
+        }
+        .theme-grid::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .theme-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .theme-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-item.active {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .theme-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .dot-c {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .theme-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .check-icon {
+            font-size: 0.85rem;
+            color: var(--primary);
+            opacity: 0;
+        }
+
+        .theme-item.active .check-icon {
+            opacity: 1;
+        }
+
+        /* Notifications */
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #10b981;
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 999;
+        }
+
+        .toast-msg.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .warning-overlay {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: rgba(239, 68, 68, 0.95);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.88rem;
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-overlay.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .icon-svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .script-grid {
+                grid-template-columns: 1fr;
+            }
+            .theme-grid {
+                grid-template-columns: 1fr;
+            }
+            .toast-msg {
+                right: 15px;
+                left: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body data-theme="kyoto">
+
+    <!-- Canvas hạt nền siêu mượt -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Cảnh báo chống Soi Code -->
+    <div id="warning-box" class="warning-overlay">
+        <span>🚫</span>
+        <span>Cảnh báo: Đã chặn hành vi soi Code / F12!</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="brand">
+                <div class="logo">QH</div>
+                <div class="brand-title">QH Dev - Script Hub</div>
+            </div>
+            <div class="header-actions">
+                <div class="clock-box">
+                    <span class="dot"></span>
+                    <span id="vn-clock">00:00:00 AM</span>
+                </div>
+                <button class="btn-action" onclick="openThemeModal()">
+                    🎨 <span>Giao diện</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Script Grid -->
+        <main class="script-grid">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Quantum Onyx</div>
+                    <span class="card-tag">Blox Fruits - Roblox</span>
+                </div>
+                <div class="card-desc">Quantum Onyx</div>
+                <div class="code-preview" id="code-1">loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()</div>
+                <button class="btn-copy" onclick="copyCode('code-1', this)">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                    <span class="btn-text">Sao Chép Script</span>
+                </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">RealKid Hub</div>
+                    <span class="card-tag">Blox Fruits - Roblox</span>
+                </div>
+                <div class="card-desc">Có Key. Khá ngon</div>
+                <div class="code-preview" id="code-2">loadstring(game:HttpGet("https://raw.githubusercontent.com/realkidhub/realkid/refs/heads/main/main.lua"))()</div>
+                <button class="btn-copy" onclick="copyCode('code-2', this)">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                    <span class="btn-text">Sao Chép Script</span>
+                </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Script Lutus Hub</div>
+                    <span class="card-tag">Blox Fruits - Roblox</span>
+                </div>
+                <div class="card-desc">Mới ra còn khá nhiều lỗi (Không khuyên dùng)</div>
+                <div class="code-preview" id="code-3">loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/Immortal/refs/heads/main/Lotus_BF_Main.lua"))()</div>
+                <button class="btn-copy" onclick="copyCode('code-3', this)">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                    <span class="btn-text">Sao Chép Script</span>
+                </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Script PVP</div>
+                    <span class="card-tag">Blox Fruits - Roblox</span>
+                </div>
+                <div class="card-desc">Script PVP Aim khá tốt</div>
+                <div class="code-preview" id="code-3">loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/Loader.lua"))()</div>
+                <button class="btn-copy" onclick="copyCode('code-3', this)">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                    <span class="btn-text">Sao Chép Script</span>
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Modal Chọn Theme (12 Themes) -->
+    <div class="modal-overlay" id="theme-modal" onclick="closeThemeModal(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <span>🎨</span>
+                    <span>Chọn Giao Diện</span>
+                </div>
+                <button class="btn-close" onclick="forceCloseThemeModal()">✕</button>
+            </div>
+            <div class="theme-grid">
+
+                <div class="theme-item active" data-t="kyoto" onclick="setTheme('kyoto')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#0b0914"></span><span class="dot-c" style="background:#a855f7"></span><span class="dot-c" style="background:#ec4899"></span></div>
+                        <span class="theme-name">Kyoto Night</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="cyber" onclick="setTheme('cyber')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#030a16"></span><span class="dot-c" style="background:#06b6d4"></span><span class="dot-c" style="background:#3b82f6"></span></div>
+                        <span class="theme-name">Cyber Neon</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="amoled" onclick="setTheme('amoled')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#000000"></span><span class="dot-c" style="background:#10b981"></span><span class="dot-c" style="background:#06b6d4"></span></div>
+                        <span class="theme-name">Amoled Pulse</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="sunset" onclick="setTheme('sunset')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#140a0d"></span><span class="dot-c" style="background:#f97316"></span><span class="dot-c" style="background:#ef4444"></span></div>
+                        <span class="theme-name">Sunset Chill</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="ocean" onclick="setTheme('ocean')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#070f1e"></span><span class="dot-c" style="background:#0284c7"></span><span class="dot-c" style="background:#38bdf8"></span></div>
+                        <span class="theme-name">Deep Ocean</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="dracula" onclick="setTheme('dracula')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#110e1b"></span><span class="dot-c" style="background:#8b5cf6"></span><span class="dot-c" style="background:#c084fc"></span></div>
+                        <span class="theme-name">Dracula Violet</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="gold" onclick="setTheme('gold')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#0d0b06"></span><span class="dot-c" style="background:#f59e0b"></span><span class="dot-c" style="background:#fbbf24"></span></div>
+                        <span class="theme-name">Luxury Gold</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="nordic" onclick="setTheme('nordic')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#0f172a"></span><span class="dot-c" style="background:#38bdf8"></span><span class="dot-c" style="background:#818cf8"></span></div>
+                        <span class="theme-name">Nordic Light</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="sakura" onclick="setTheme('sakura')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#14080e"></span><span class="dot-c" style="background:#f43f5e"></span><span class="dot-c" style="background:#fb7185"></span></div>
+                        <span class="theme-name">Sakura Blossom</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="matrix" onclick="setTheme('matrix')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#02120a"></span><span class="dot-c" style="background:#00ff87"></span><span class="dot-c" style="background:#6ee7b7"></span></div>
+                        <span class="theme-name">Emerald Matrix</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="cyber-red" onclick="setTheme('cyber-red')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#120307"></span><span class="dot-c" style="background:#ff0055"></span><span class="dot-c" style="background:#ff5000"></span></div>
+                        <span class="theme-name">Cyberpunk Red</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+                <div class="theme-item" data-t="synthwave" onclick="setTheme('synthwave')">
+                    <div class="theme-info">
+                        <div class="theme-dots"><span class="dot-c" style="background:#0f051d"></span><span class="dot-c" style="background:#d946ef"></span><span class="dot-c" style="background:#8b5cf6"></span></div>
+                        <span class="theme-name">Synthwave 80s</span>
+                    </div>
+                    <span class="check-icon">✓</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Báo Copy -->
+    <div id="toast" class="toast-msg">✓ Đã sao chép Script vào khay nhớ tạm!</div>
+
+    <!-- JavaScript - ULTRA FAST LOGIC -->
+    <script>
+        /* ==========================================
+           1. ĐỒNG HỒ VIỆT NAM (LIVE UTC+7)
+        ========================================== */
+        function updateVNClock() {
+            const options = {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            document.getElementById('vn-clock').textContent = formatter.format(new Date());
+        }
+        setInterval(updateVNClock, 1000);
+        updateVNClock();
+
+        /* ==========================================
+           2. CHỐNG SOI CODE (ANTI-INSPECT & F12)
+        ========================================== */
+        let warnTimeout;
+        function triggerWarning() {
+            const warnBox = document.getElementById('warning-box');
+            warnBox.classList.add('show');
+            clearTimeout(warnTimeout);
+            warnTimeout = setTimeout(() => {
+                warnBox.classList.remove('show');
+            }, 1800);
+        }
+
+        // Chặn chuột phải
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            triggerWarning();
+        });
+
+        // Chặn F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S
+        document.addEventListener('keydown', function(e) {
+            if (
+                e.keyCode === 123 || 
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
+                (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83))
+            ) {
+                e.preventDefault();
+                triggerWarning();
+            }
+        });
+
+        /* ==========================================
+           3. XỬ LÝ COPY SCRIPT
+        ========================================== */
+        function copyCode(elementId, buttonEl) {
+            const codeText = document.getElementById(elementId).innerText;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                buttonEl.classList.add('copied');
+                buttonEl.querySelector('.btn-text').textContent = "Đã Sao Chép!";
+
+                showToast("✓ Đã sao chép Script vào khay nhớ tạm!");
+
+                setTimeout(() => {
+                    buttonEl.classList.remove('copied');
+                    buttonEl.querySelector('.btn-text').textContent = "Sao Chép Script";
+                }, 2000);
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+
+        /* ==========================================
+           4. QUẢN LÝ THEME MODAL & LƯU LOCALSTORAGE
+        ========================================== */
+        function openThemeModal() {
+            document.getElementById('theme-modal').classList.add('active');
+        }
+
+        function closeThemeModal(e) {
+            if (e.target.classList.contains('modal-overlay')) {
+                document.getElementById('theme-modal').classList.remove('active');
+            }
+        }
+
+        function forceCloseThemeModal() {
+            document.getElementById('theme-modal').classList.remove('active');
+        }
+
+        function setTheme(themeKey) {
+            document.body.setAttribute('data-theme', themeKey);
+            
+            // Cập nhật giao diện nút theme active
+            document.querySelectorAll('.theme-item').forEach(item => {
+                if (item.getAttribute('data-t') === themeKey) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Ghi nhớ Theme đã chọn vào bộ nhớ trình duyệt
+            localStorage.setItem('qh_theme', themeKey);
+
+            setTimeout(updateParticleColor, 50);
+            forceCloseThemeModal();
+        }
+
+        // Tải lại Theme người dùng đã chọn trước đó
+        function loadSavedPreferences() {
+            const savedTheme = localStorage.getItem('qh_theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            }
+        }
+
+        /* ==========================================
+           5. HIỆU ỨNG HẠT CANVAS (NO-LAG - 120 FPS)
+        ========================================== */
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let particleColor = '#a855f7';
+
+        function updateParticleColor() {
+            particleColor = getComputedStyle(document.body).getPropertyValue('--particle').trim() || '#a855f7';
+        }
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.6;
+                this.vy = (Math.random() - 0.5) * 0.6;
+                this.radius = Math.random() * 1.5 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = particleColor;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const isMobile = window.innerWidth < 640;
+            const count = isMobile ? 22 : 45; // Tối ưu tải di động
+
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        // Khởi tạo ứng dụng
+        resizeCanvas();
+        updateParticleColor();
+        loadSavedPreferences(); // Nạp Theme cũ từ LocalStorage
+
+        // Tối ưu hóa tính khoảng cách
+        const maxDistanceSq = 14400; // 120 * 120
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            const len = particles.length;
+            for (let i = 0; i < len; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < len; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distSq = dx * dx + dy * dy;
+
+                    if (distSq < maxDistanceSq) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = particleColor;
+                        ctx.globalAlpha = 0.15 * (1 - distSq / maxDistanceSq);
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1.0;
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
