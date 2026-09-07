@@ -162,7 +162,7 @@
             overflow-x: hidden;
             position: relative;
             transition: background-color 0.3s ease;
-            transform: translate3d(0, 0, 0); /* GPU Acceleration */
+            transform: translate3d(0, 0, 0);
         }
 
         #bg-canvas {
@@ -582,7 +582,6 @@
             fill: currentColor;
         }
 
-        /* Responsive Mobile */
         @media (max-width: 640px) {
             header {
                 flex-direction: column;
@@ -609,19 +608,14 @@
 </head>
 <body data-theme="kyoto">
 
-    <!-- Canvas hạt nền siêu mượt -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Cảnh báo chống Soi Code -->
     <div id="warning-box" class="warning-overlay">
         <span>🚫</span>
         <span>Cảnh báo: Đã chặn hành vi soi Code / F12!</span>
     </div>
 
-    <!-- Main Container -->
     <div class="app-container">
-        
-        <!-- Header -->
         <header>
             <div class="brand">
                 <div class="logo">QH</div>
@@ -638,84 +632,11 @@
             </div>
         </header>
 
-        <!-- Script Grid -->
-        <main class="script-grid">
-
-            <!-- Card 1 -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Quantum Onyx</div>
-                    <span class="card-tag">Blox Fruits - Roblox</span>
-                </div>
-                <div class="card-desc">Quantum Onyx</div>
-                <div class="code-preview" id="code-1">loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()</div>
-                <button class="btn-copy" onclick="copyCode('code-1', this)">
-                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                    <span class="btn-text">Sao Chép Script</span>
-                </button>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">RealKid Hub</div>
-                    <span class="card-tag">Blox Fruits - Roblox</span>
-                </div>
-                <div class="card-desc">Có Key. Khá ngon</div>
-                <div class="code-preview" id="code-2">loadstring(game:HttpGet("https://raw.githubusercontent.com/realkidhub/realkid/refs/heads/main/main.lua"))()</div>
-                <button class="btn-copy" onclick="copyCode('code-2', this)">
-                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                    <span class="btn-text">Sao Chép Script</span>
-                </button>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Lutus Hub</div>
-                    <span class="card-tag">Blox Fruits - Roblox</span>
-                </div>
-                <div class="card-desc">Mới ra còn khá nhiều lỗi (Không khuyên dùng)</div>
-                <div class="code-preview" id="code-3">loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/Immortal/refs/heads/main/Lotus_BF_Main.lua"))()</div>
-                <button class="btn-copy" onclick="copyCode('code-3', this)">
-                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                    <span class="btn-text">Sao Chép Script</span>
-                </button>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Teddy Hub</div>
-                    <span class="card-tag">Blox Fruits - Roblox</span>
-                </div>
-                <div class="card-desc">Farm sự kiện mới khá ngon</div>
-                <div class="code-preview" id="code-3">repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/refs/heads/main/TeddyHub.lua"))() </div>
-                <button class="btn-copy" onclick="copyCode('code-3', this)">
-                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                    <span class="btn-text">Sao Chép Script</span>
-                </button>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Script PVP</div>
-                    <span class="card-tag">Blox Fruits - Roblox</span>
-                </div>
-                <div class="card-desc">Script PVP Aim khá tốt</div>
-                <div class="code-preview" id="code-3">loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/Loader.lua"))()</div>
-                <button class="btn-copy" onclick="copyCode('code-3', this)">
-                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                    <span class="btn-text">Sao Chép Script</span>
-                </button>
-            </div>
-
-        </main>
+        <!-- Thẻ chứa các Script tự động tạo bởi JS -->
+        <main class="script-grid" id="script-container"></main>
     </div>
 
-    <!-- Modal Chọn Theme (12 Themes) -->
+    <!-- Modal Chọn Theme -->
     <div class="modal-overlay" id="theme-modal" onclick="closeThemeModal(event)">
         <div class="modal-card">
             <div class="modal-header">
@@ -726,7 +647,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                 <button class="btn-close" onclick="forceCloseThemeModal()">✕</button>
             </div>
             <div class="theme-grid">
-
                 <div class="theme-item active" data-t="kyoto" onclick="setTheme('kyoto')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#0b0914"></span><span class="dot-c" style="background:#a855f7"></span><span class="dot-c" style="background:#ec4899"></span></div>
@@ -734,7 +654,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="cyber" onclick="setTheme('cyber')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#030a16"></span><span class="dot-c" style="background:#06b6d4"></span><span class="dot-c" style="background:#3b82f6"></span></div>
@@ -742,7 +661,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="amoled" onclick="setTheme('amoled')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#000000"></span><span class="dot-c" style="background:#10b981"></span><span class="dot-c" style="background:#06b6d4"></span></div>
@@ -750,7 +668,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="sunset" onclick="setTheme('sunset')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#140a0d"></span><span class="dot-c" style="background:#f97316"></span><span class="dot-c" style="background:#ef4444"></span></div>
@@ -758,7 +675,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="ocean" onclick="setTheme('ocean')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#070f1e"></span><span class="dot-c" style="background:#0284c7"></span><span class="dot-c" style="background:#38bdf8"></span></div>
@@ -766,7 +682,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="dracula" onclick="setTheme('dracula')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#110e1b"></span><span class="dot-c" style="background:#8b5cf6"></span><span class="dot-c" style="background:#c084fc"></span></div>
@@ -774,7 +689,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="gold" onclick="setTheme('gold')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#0d0b06"></span><span class="dot-c" style="background:#f59e0b"></span><span class="dot-c" style="background:#fbbf24"></span></div>
@@ -782,7 +696,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="nordic" onclick="setTheme('nordic')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#0f172a"></span><span class="dot-c" style="background:#38bdf8"></span><span class="dot-c" style="background:#818cf8"></span></div>
@@ -790,7 +703,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="sakura" onclick="setTheme('sakura')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#14080e"></span><span class="dot-c" style="background:#f43f5e"></span><span class="dot-c" style="background:#fb7185"></span></div>
@@ -798,7 +710,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="matrix" onclick="setTheme('matrix')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#02120a"></span><span class="dot-c" style="background:#00ff87"></span><span class="dot-c" style="background:#6ee7b7"></span></div>
@@ -806,7 +717,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="cyber-red" onclick="setTheme('cyber-red')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#120307"></span><span class="dot-c" style="background:#ff0055"></span><span class="dot-c" style="background:#ff5000"></span></div>
@@ -814,7 +724,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
                 <div class="theme-item" data-t="synthwave" onclick="setTheme('synthwave')">
                     <div class="theme-info">
                         <div class="theme-dots"><span class="dot-c" style="background:#0f051d"></span><span class="dot-c" style="background:#d946ef"></span><span class="dot-c" style="background:#8b5cf6"></span></div>
@@ -822,7 +731,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                     </div>
                     <span class="check-icon">✓</span>
                 </div>
-
             </div>
         </div>
     </div>
@@ -830,8 +738,118 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
     <!-- Toast Báo Copy -->
     <div id="toast" class="toast-msg">✓ Đã sao chép Script vào khay nhớ tạm!</div>
 
-    <!-- JavaScript - ULTRA FAST LOGIC -->
+    <!-- JavaScript - ULTRA FAST & EASY CONFIG LOGIC -->
     <script>
+        /* =========================================================================
+           DANH SÁCH SCRIPT (BẠN CHỈ CẦN CHỈNH SỬA TẠI ĐÂY CỰC KỲ DỄ DÀNG)
+        ========================================================================= */
+        const SCRIPTS_DATA = [
+            {
+                title: "Quantum Onyx",
+                tag: "Blox Fruits - Roblox",
+                desc: "Quantum Onyx",
+                code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()`
+            },
+            {
+                title: "RealKid Hub",
+                tag: "Blox Fruits - Roblox",
+                desc: "Có Key. Khá ngon",
+                code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/realkidhub/realkid/refs/heads/main/main.lua"))()`
+            },
+            {
+                title: "Lutus Hub",
+                tag: "Blox Fruits - Roblox",
+                desc: "Mới ra còn khá nhiều lỗi (Không khuyên dùng)",
+                code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/Immortal/refs/heads/main/Lotus_BF_Main.lua"))()`
+            },
+            {
+                title: "Teddy Hub",
+                tag: "Blox Fruits - Roblox",
+                desc: "Farm sự kiện mới khá ngon",
+                code: `repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/refs/heads/main/TeddyHub.lua"))()`
+            },
+            {
+                title: "Script PVP",
+                tag: "Blox Fruits - Roblox",
+                desc: "Script PVP Aim khá tốt",
+                code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/Loader.lua"))()`
+            }
+        ];
+
+        /* ==========================================
+           HÀM TỰ ĐỘNG VẼ CÁC CARD SCRIPT RA GIAO DIỆN
+        ========================================== */
+        function renderScripts() {
+            const container = document.getElementById('script-container');
+            container.innerHTML = '';
+
+            SCRIPTS_DATA.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="card-title">${escapeHtml(item.title)}</div>
+                        <span class="card-tag">${escapeHtml(item.tag)}</span>
+                    </div>
+                    <div class="card-desc">${escapeHtml(item.desc)}</div>
+                    <div class="code-preview" id="code-text-${index}">${escapeHtml(item.code)}</div>
+                    <button class="btn-copy" onclick="copyCodeByIndex(${index}, this)">
+                        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                        <span class="btn-text">Sao Chép Script</span>
+                    </button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        /* ==========================================
+           HÀM XỬ LÝ COPY CHÍNH XÁC THEO CHỈ SỐ (INDEX)
+        ========================================== */
+        function copyCodeByIndex(index, buttonEl) {
+            const scriptText = SCRIPTS_DATA[index].code;
+
+            navigator.clipboard.writeText(scriptText).then(() => {
+                buttonEl.classList.add('copied');
+                buttonEl.querySelector('.btn-text').textContent = "Đã Sao Chép!";
+
+                showToast("✓ Đã sao chép Script vào khay nhớ tạm!");
+
+                setTimeout(() => {
+                    buttonEl.classList.remove('copied');
+                    buttonEl.querySelector('.btn-text').textContent = "Sao Chép Script";
+                }, 2000);
+            }).catch(() => {
+                // Fallback nếu trình duyệt không hỗ trợ Clipboard API
+                const codeElement = document.getElementById(`code-text-${index}`);
+                const range = document.createRange();
+                range.selectNodeContents(codeElement);
+                const sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+                document.execCommand('copy');
+                sel.removeAllRanges();
+
+                buttonEl.classList.add('copied');
+                buttonEl.querySelector('.btn-text').textContent = "Đã Sao Chép!";
+                showToast("✓ Đã sao chép Script vào khay nhớ tạm!");
+
+                setTimeout(() => {
+                    buttonEl.classList.remove('copied');
+                    buttonEl.querySelector('.btn-text').textContent = "Sao Chép Script";
+                }, 2000);
+            });
+        }
+
         /* ==========================================
            1. ĐỒNG HỒ VIỆT NAM (LIVE UTC+7)
         ========================================== */
@@ -862,13 +880,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
             }, 1800);
         }
 
-        // Chặn chuột phải
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             triggerWarning();
         });
 
-        // Chặn F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S
         document.addEventListener('keydown', function(e) {
             if (
                 e.keyCode === 123 || 
@@ -881,24 +897,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
         });
 
         /* ==========================================
-           3. XỬ LÝ COPY SCRIPT
+           3. TOAST BÁO COPY
         ========================================== */
-        function copyCode(elementId, buttonEl) {
-            const codeText = document.getElementById(elementId).innerText;
-
-            navigator.clipboard.writeText(codeText).then(() => {
-                buttonEl.classList.add('copied');
-                buttonEl.querySelector('.btn-text').textContent = "Đã Sao Chép!";
-
-                showToast("✓ Đã sao chép Script vào khay nhớ tạm!");
-
-                setTimeout(() => {
-                    buttonEl.classList.remove('copied');
-                    buttonEl.querySelector('.btn-text').textContent = "Sao Chép Script";
-                }, 2000);
-            });
-        }
-
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.textContent = msg;
@@ -928,7 +928,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
         function setTheme(themeKey) {
             document.body.setAttribute('data-theme', themeKey);
             
-            // Cập nhật giao diện nút theme active
             document.querySelectorAll('.theme-item').forEach(item => {
                 if (item.getAttribute('data-t') === themeKey) {
                     item.classList.add('active');
@@ -937,14 +936,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
                 }
             });
 
-            // Ghi nhớ Theme đã chọn vào bộ nhớ trình duyệt
             localStorage.setItem('qh_theme', themeKey);
-
             setTimeout(updateParticleColor, 50);
             forceCloseThemeModal();
         }
 
-        // Tải lại Theme người dùng đã chọn trước đó
         function loadSavedPreferences() {
             const savedTheme = localStorage.getItem('qh_theme');
             if (savedTheme) {
@@ -999,7 +995,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
         function initParticles() {
             particles = [];
             const isMobile = window.innerWidth < 640;
-            const count = isMobile ? 22 : 45; // Tối ưu tải di động
+            const count = isMobile ? 22 : 45;
 
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle());
@@ -1008,13 +1004,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/teddyhubdev/diepvy/re
 
         window.addEventListener('resize', resizeCanvas);
 
-        // Khởi tạo ứng dụng
+        // Khởi tạo trang web
+        renderScripts();
         resizeCanvas();
         updateParticleColor();
-        loadSavedPreferences(); // Nạp Theme cũ từ LocalStorage
+        loadSavedPreferences();
 
-        // Tối ưu hóa tính khoảng cách
-        const maxDistanceSq = 14400; // 120 * 120
+        const maxDistanceSq = 14400;
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
